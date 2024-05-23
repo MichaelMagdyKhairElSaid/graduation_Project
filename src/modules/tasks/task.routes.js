@@ -1,7 +1,7 @@
 import express from "express";
 import * as taskController from "./controller/task.controller.js";
 import { allowTo, protectRoutes } from "../auth/auth.controller.js";
-import { validation } from "../../utils/middleware/validation.js";
+import { validation } from "../../utils/handler/validation.js";
 import { addTaskSchema, deleteTaskSchema, updateTaskSchema } from "./task.validator.js";
 
 const taskRouter = express.Router();

@@ -1,7 +1,7 @@
 import express from 'express';
 import cors from 'cors';
 import dbConnection from './database/db_connection.js';
-import employeeRouter from './src/modules/employee/employee.routes.js';
+import userModel from './database/models/user.model.js';
 import { configDotenv } from 'dotenv';
 import authRouter from './src/modules/auth/auth.routes.js';
 import requestRouter from './src/modules/request/request.routes.js';
@@ -19,7 +19,7 @@ app.use(express.json());
 app.use(express.static('uploads'));
 app.use(express.urlencoded({extended:true})) // to parse form data
 
-app.use("/api/v1/employee",employeeRouter)
+app.use("/api/v1/employee",userModel)
 app.use("/api/v1/auth",authRouter)
 app.use("/api/v1/request",requestRouter)
 app.use("/api/v1/task",taskRouter)

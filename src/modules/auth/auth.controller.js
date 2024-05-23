@@ -1,7 +1,7 @@
 import jwt from "jsonwebtoken";
 import bcrypt from "bcrypt";
 import catchAsyncError from "../../utils/middleware/catchAsyncError.js";
-import userModel from "../../../Db/models/user.model.js";
+import userModel from "../../../database/models/user.model.js";
 import AppError from "../../utils/services/AppError.js";
 
 export const signIn = catchAsyncError(async (req, res, next) => {
